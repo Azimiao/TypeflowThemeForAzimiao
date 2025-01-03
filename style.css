@@ -1,0 +1,15 @@
+/*
+Theme Name:     Typeflow For Azimiao
+Theme URI:      https: //www.azimiao.com
+Description:    Child theme for the Typeflow theme, Made for Azimiao.com 
+Author:         WildRabbit
+Author URI:     https: //www.azimiao.com/about
+Template:       typeflow
+Version:        1.0.0
+*/
+
+@import url("../typeflow/style.css");
+
+.entry-footer{
+    padding-top: 0 !important;
+}
