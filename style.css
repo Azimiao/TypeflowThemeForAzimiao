@@ -13,3 +13,7 @@ Version:        1.0.0
 .entry-footer{
     padding-top: 0 !important;
 }
+
+#footer-logo{
+    filter: none !important;
+}

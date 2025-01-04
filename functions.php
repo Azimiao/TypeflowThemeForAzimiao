@@ -15,6 +15,13 @@ function typeflow_load() {
     include( get_template_directory() . '/functions/class-tgm-plugin-activation.php' );
 }
 
+function typeflow_scripts() {
+    wp_enqueue_script( 'typeflow-slick', get_template_directory_uri() . '/js/slick.min.js', array( 'jquery' ),'', false );
+    if ( get_theme_mod( 'theme-toggle','on' ) == 'on' ) { wp_enqueue_script( 'typeflow-theme-toggle', get_template_directory_uri() . '/js/theme-toggle.js', array( 'jquery' ),'', true ); }
+    wp_enqueue_script( 'typeflow-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'jquery' ),'', true );
+    if ( is_singular() && get_option( 'thread_comments' ) )	{ wp_enqueue_script( 'comment-reply' ); }
+} 
+
 
 function typeflow_enqueue_google_fonts () {
     $font_api = "fonts.font.im";
