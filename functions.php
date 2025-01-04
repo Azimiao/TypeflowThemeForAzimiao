@@ -1,5 +1,7 @@
 <?php
 
+// enable link
+add_filter('pre_option_link_manager_enabled', '__return_true');
 
 function typeflow_load() {
     // Load theme languages
