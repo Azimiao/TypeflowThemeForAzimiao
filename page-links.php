@@ -67,8 +67,11 @@ url: http://azimiao.com
 									padding: 0 !important;
 								}
 
-								.link-content .link-item span {
-									display: block
+								.link-content .link-item .sitename {
+									display: block;
+									text-overflow: ellipsis;
+									text-wrap:nowrap;
+									overflow: hidden;
 								}
 
 								.link-content .link-item:hover {
