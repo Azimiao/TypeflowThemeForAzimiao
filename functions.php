@@ -3,6 +3,16 @@
 // enable link
 add_filter('pre_option_link_manager_enabled', '__return_true');
 
+// require plugin YIKES Simple Taxonomy Ordering
+add_filter( 'yikes_simple_taxonomy_ordering_excluded_taxonomies', 'change_yikes_excluded_taxonomies', 10, 1 );
+
+function change_yikes_excluded_taxonomies( $excluded_taxonomies ) {
+	if (($key = array_search('link_category', $excluded_taxonomies)) !== false) {
+		unset($excluded_taxonomies[$key]);
+	}
+	return $excluded_taxonomies;
+}
+
 function typeflow_load() {
     // Load theme languages
     load_theme_textdomain( 'typeflow', get_template_directory().'/languages' );
@@ -53,7 +63,17 @@ function typeflow_enqueue_google_fonts () {
 
 // 替换 WordPress Gravatar 为国内头像源
 function theme_get_ssl_avatar($avatar) {
-    $avatar = str_replace(array("www.gravatar.com","cn.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com", "secure.gravatar.com"), "dn-qiniu-avatar.qbox.me", $avatar);
+    $avatar = str_replace(
+        array(
+            "www.gravatar.com",
+            "cn.gravatar.com", 
+            "0.gravatar.com", 
+            "1.gravatar.com", 
+            "2.gravatar.com", 
+            "secure.gravatar.com"
+        ), 
+        "gravatar.loli.net",
+         $avatar);
     return $avatar;
 }
 add_filter('get_avatar', 'theme_get_ssl_avatar');
