@@ -5,11 +5,11 @@ Description:    Child theme for the Typeflow theme, Made for Azimiao.com
 Author:         WildRabbit
 Author URI:     https: //www.azimiao.com/about
 Template:       typeflow
-Version:        1.0.0
+Version:        1.0.1
 */
 
 @import url("../typeflow/style.css");
-
+@import url("./code-style-xonokai.css");
 .entry-footer{
     padding-top: 0 !important;
 }
