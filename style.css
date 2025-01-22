@@ -18,6 +18,13 @@ Version:        1.0.1
     filter: none !important;
 }
 
+.entry-header .entry-featured-image img{
+	width: auto !important;
+	max-width:100% !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
 article.post p img{
     border: 6px solid #fff;
     box-sizing: border-box;
